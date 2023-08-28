@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>“范式杯”2023牛客暑期多校训练营1 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u201c\u8303\u5f0f\u676f\u201d2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u84251";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u8425 - 1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">“范式杯”2023牛客暑期多校训练营1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20231">“范式杯”2023牛客暑期多校训练营1</h1>
+<h3 id="a-almost-correct">A - Almost Correct</h3>
+<h3 id="b-anticomplementary-triangle">B - Anticomplementary Triangle</h3>
+<h3 id="c-carrot-trees">C - Carrot Trees</h3>
+<h3 id="d-chocolate">D - Chocolate</h3>
+<p>题意：两个人在一个矩阵上博弈，每个人每次可以选一个左上角的前缀子矩阵内的所有点，要求当前选择的子矩阵内的点都没有被选择过，没有办法操作的人输，给出矩阵的大小，求胜者</p>
+<p>猜结论题，大胆猜测只有当 $n=m=1$ 时先手胜，否则后手胜，成功通过</p>
+<h3 id="e-heap">E - Heap</h3>
+<h3 id="f-intersection">F - Intersection</h3>
+<h3 id="g-lcrs-transform">G - LCRS Transform</h3>
+<h3 id="h-matches">H - Matches</h3>
+<h3 id="i-random">I - Random</h3>
+<h3 id="j-roulette">J - Roulette</h3>
+<p>题意：一个人去赌博，每次赌博的规则为输了投原来的两倍，赢了投一元，赌博的倍率为 $2$，求在初始赌资为 $n$ 的情况下能否赚 $m$ 元钱</p>
+<p>容易发现以上述策略赌博每次只能赢 $1$ 元，所以只需要求出在 $n \sim n+m-1$ 元时能赢一块钱的概率，乘起来就是最终的概率</p>
+<p>考虑初始赌资为 $n$ 元时赢的概率，可以由 $1-$ 输的概率 得到，而输的概率为直到超过位置一直输的概率，容易发现为 $\frac 1{2^{\lfloor\log_2i\rfloor}}$，所以可以按位分块求和，复杂度 $O(T\log n)$</p>
+<h3 id="k-subdivision">K - Subdivision</h3>
+<p>题意：给出一张图，可以进行 compress 的反操作，求到 $1$ 的最小距离 $\leq K$ 的最大点数</p>
+<p>考虑先把最短路树建出来，分树边和非树边讨论。
+- 树边：只有一侧是叶子并且叶子在原图上的度数也是 $1$ 的树边才能够加点，并且能加的点数为 $\max(K-\min(dep_u,dep_v)-1,0)$
+- 非树边：可以加的点数是 $\max(K-dep_u,0)+\max(K-dep_v,0)$</p>
+<p>直接分类讨论即可，复杂度 $O(n)$</p>
+<h3 id="l-three-permutations">L - Three Permutations</h3>
+<p>题意：给出三个序列 $a,b,c$，定义一次移动为 $\begin{cases}x=a_y\y=b_z\z=c_x\end{cases}$，求从 $(1,1,1)$ 移动到 $(x',y',z')$ 需要的最小步数，$q$ 次询问</p>
+<p>按最终答案 $\rm mod\ 3$ 的结果分类讨论，每次先跳一个小步，再跳整个大步，然后就是求排列不动点的板子了。由于是三个序列，所以同余方程也有三个，需要一个小的 exCRT，复杂度 $O(n+q\log n)$，可通过</p>
+<h3 id="m-water">M - Water</h3>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

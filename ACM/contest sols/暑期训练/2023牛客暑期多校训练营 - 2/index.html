@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023牛客暑期多校训练营2 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u84252";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u8425 - 2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023牛客暑期多校训练营2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20232">2023牛客暑期多校训练营2</h1>
+<p>~~（前一天是被恶心到的一天，这次是一维很难其实很简单的一天）~~</p>
+<h3 id="a-link-with-checksum">A - Link with Checksum</h3>
+<p>好像是道 CTF 的题，留坑</p>
+<h3 id="b-link-with-railway-company">B - Link with Railway Company</h3>
+<p>~~（看题的时候没看出来是最大权闭合子图，时候看题解的时候感觉悔死了。。。）~~
+题意：一棵 $n$ 个点的树，给出 $m$ 条路径，每条路径有 $x_i$ 的收入，$y_i$ 的支出，每条树边有 $c_i$ 的</p>
+<p>有依赖关系的物品选择，直接最大权闭合子图，负的连源点，正的连汇点，树边向路径建边，为了减少边数可以用树链剖分 + 线段树 + 前缀建边优化，将边数优化为 $O(m\log n)$，直接跑最大流就可以了（由于出题人没有卡，所以只用线段树建边优化没用前缀建边优化也能过，边数 $O(m\log^2 n)$）</p>
+<h3 id="c-graph">C - graph</h3>
+<h3 id="d-the-game-of-eating">D - The Game of Eating</h3>
+<p>题意：
+注意到每道菜无论让谁选对于每个人得到的收益都是不变的，所以可以直接从后往前选，考虑后面的人可能会怎么选，前面的人根据这个选就可以（因为自己补选别人也会帮他选的），所以直接贪心即可，复杂度 $O(nm)$</p>
+<h3 id="e-square">E - Square</h3>
+<p>题意：给定 $x$ 求 $y \in [0,1e9]_\mathbb Z$ 满足 $\exists k,\lfloor{y^2 \over 10^k}\rfloor=x$
+很明显，在数字足够大的情况下，$y$ 和 $\sqrt{x*10^k}$ 在取整后的误差会越来越小，所以可以直接每次对 $x$ 乘 $10$，对开根后的结果左右尝试一下是否满足条件即可，复杂度 $O(TC\log n)$</p>
+<h3 id="f-link-with-chess-game">F - Link with Chess Game</h3>
+<p>二分图博弈的题，等学完再说，先留坑</p>
+<h3 id="g-link-with-centrally-symmetric-strings">G - Link with Centrally Symmetric Strings</h3>
+<p>题意：给出一个串 $S$，求其是否可以拆分成若干中心对称串（$s,o,x,z$ 和自身相等，$(b,q),(p,d),(n,u)$ 对应相等，其他均不等）</p>
+<p>中心对称串可以 manacher 魔改后求出
+由于只需要判断是否存在划分，所以直接贪心拆最小的即可（在同起点的情况下，更大的一定可以拆成至少 $3$ 个更小的），复杂度 $O(\sum n)$（注意可能会被卡常，因为要卡 $O(\sum n\log n)$ 的做法）</p>
+<h3 id="h-0-and-1-in-bit">H - 0 and 1 in BIT</h3>
+<p>题意：给定一个操作序列，$A$ 表示对 $x$ 取反，$B$ 表示 $x=x+1$，每次给定一个操作序列的子区间和起始数字，求操作后的数字，强制在线</p>
+<p>注意到在模 $2^{len}$ 的意义下（$len$ 为给定起始数字比特位数），对 $x$ 取反相当于 $x=-x-1$，于是将两种变换变成了两种线性变换，可以用矩阵表示，所以原问题就变成了求区间矩阵积的问题，对于每个询问的 $len$ 不同的问题直接选择 unsigned long long 的自然溢出即可（取模也可以理解为溢出），复杂度 $O(8n\log n)$</p>
+<p>也可以选择另一种前缀和预处理的方法，具体如下：
+- $cnt_{l,r}=[l,r]$ 内 $A$ 的个数
+- $f_{l,r}$ 表示 $x$ 经过 $[l,r]$ 的操作后变为 $(-1)^{cnt_{l,r}}x+f_{l,r}$
+    - $f_{l,r}=\begin{cases}f_{1,r}-f_{1,l-1}&amp;,cnt_{l,r}{\ \rm mod\ }2=0\f_{1,r}+f_{1,l-1}&amp;,cnt_{l,r}{\ \rm mod\ }2=1\end{cases}$</p>
+<p>直接求解即可，复杂度 $O(n)$</p>
+<h3 id="i-link-with-gomoku">I - Link with Gomoku</h3>
+<p>题意：要求给出一种五子棋的结果，摆满了整个棋盘并且最终为平局</p>
+<p>签到题，解法多样，我的解法是摆乌龟壳，正解是另外一种经典解法，如下：（. 任意填即可）
+xo...xo...xo...
+...xo...xo...xo
+.xo...xo...xo..
+o...xo...xo...x</p>
+<p>...</p>
+<h3 id="j-smoke">J - Smoke</h3>
+<h3 id="k-box">K - Box</h3>
+<p>题意：有个 $01$ 串，每个 $1$ 可以向左/右/原位置移动，要求一个位置不能有两个 $1$。每个位置有一个代价，要求最小化 $1$ 所在位置的代价和</p>
+<p>一眼 dp，定义 $dp_{i,0/1,0/1/2}$，表示第 $i$ 个位置在考虑了前 $i$ 个位置后是否已经有 $1$，该位置的原有数字向左/当前/右移动时的最大权值和，分类讨论转移即可，复杂度 $O(n\log n)$</p>
+<h3 id="l-link-doesnt-want-to-cut-tree">L - Link doesn't want to cut tree</h3>
+<h3 id="m-fundamental-skills-in-data-structures">M - Fundamental Skills in Data Structures</h3>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

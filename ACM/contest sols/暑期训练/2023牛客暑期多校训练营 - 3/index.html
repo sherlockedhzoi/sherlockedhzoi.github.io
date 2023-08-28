@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023牛客暑期多校训练营3 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u84253";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u8425 - 3.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023牛客暑期多校训练营3</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20233">2023牛客暑期多校训练营3</h1>
+<h3 id="a-world-fragments-i">A - World Fragments I</h3>
+<p>签到题
+题意：给出一个二进制数，每次可以将原数减去或加上一个原数数位上出现过得到数，求从给定数 $x$ 到给定数 $y$ 的最小操作数（不存在输出 -1）</p>
+<p>注意到是二进制数，每次不是变 $0$ 就是变 $1$，很容易发现答案为 $f_{x,y}=\begin{cases}-1&amp;,x=0\|x-y|&amp;,x \neq 0\end{cases}$，输出即可</p>
+<h3 id="b-auspiciousness">B - Auspiciousness</h3>
+<p>dp 题，看题之后忘记拆贡献了，然后一直在努力凑合法方案的最后一个数的大小，就没做出来</p>
+<p>题意：对于一个 $2n$ 的排列，选手从第一个数开始往后扫，每次预测当前扫到的数和下一个数的大小关系，对了就继续猜下一对,不对就停止。猜测的策略是：当前数 $\leq n$ 则猜测下一个数比当前数大，否则猜测下一个数比当前数小。求对于所有可能的排列选手扫过的牌的个数和</p>
+<p>首先很容易发现每个序列可以分为选手翻出来的序列和没有翻出来的序列两部分，选手翻出来的序列又可以分为连续的几段加上最后的一张不合法的卡牌，每一段都是全部 $\leq n$ 的数组成的单调递增序列/全部 $&gt;n$ 的数构成的单调递减序列。
+由于最后贡献统计的是翻出的序列的长度和，所以可以考虑将贡献拆分，更改为满足上述特征的前缀的个数，则对于每个满足特征的前缀，我们只需要统计其在几个排列中出现了即可。显然对于长度为 $i$ 的前缀，其出现的次数为 $(2n-i)!$，那么我们现在只需要统计长度为 $i$ 的满足条件的前缀个数即可，我们记它为 $f_i$</p>
+<p>$f_i$ 的求法有很多种，最常见的就是 dp，而且本题复杂度 $n^3$ dp 也可以通过，这里提供一种斯特林数的做法：
+- 枚举前 $i$ 个数中有 $j$ 个 $\leq n$ 的数，最终被分成了 $k$ 个连续段，则 $$f_i=\sum\limits_{j=\max(i-n,0)}^{\min(n,i)}\binom nj\binom n{i-j}\sum\limits_{k=1}^i k!\left[[k\&amp;1]\left(\left{\begin{matrix}j\\frac{k+1}2\end{matrix}\right}\left{\begin{matrix}i-j\\frac{k-1}2\end{matrix}\right}+\left{\begin{matrix}j\\frac{k-1}2\end{matrix}\right}\left{\begin{matrix}i-j\\frac{k+1}2\end{matrix}\right}\right)+[2 \vert k]\left(\left{\begin{matrix}j\\frac k2\end{matrix}\right}\left{\begin{matrix}i-j\\frac k2\end{matrix}\right}*2\right)\right]`$$
+其中斯特林数可以 $n^2$ 预处理，直接暴力枚举计算即可</p>
+<p>注意对于没有完全扫完的序列，其贡献我们还要在满足特征的前缀个数上再加 $1$（第一个不满足条件的位置我们也翻出来了），所以最后的答案就是 $\sum\limits_{i=1}^{2n} (2n-i)!f_i+(2n)!-f_{2n}=\sum\limits_{i=1}^{2n-1}(2n-i)!f_i+(2n)!$，时间复杂度 $O(n^3)$</p>
+<h3 id="c-stillwater-prison">C - Stillwater Prison</h3>
+<h3 id="d-ama-no-jaka">D - Ama no Jaka</h3>
+<p>题意：给定一个 01 矩阵，每次可以翻转一整行/一整列，要求最后每一行构成的 01 串对应的十进制数的最小值 $\geq$ 每一列构成的 01 串对应的十进制数的最大值</p>
+<p>从左上角开始讨论，很容易发现只有全 $0$ 和全 $1$ 的矩阵才能满足条件，然后做法就很多了，这里提供一种并查集的方法</p>
+<p>将每一行和每一列拆成两种状态：翻或不翻（1/0），对于 $A_{i,j}=1$，要想把它翻成全 $0$，则第 $i$ 行和第 $j$ 列的翻转状态必须相反，全 $1$ 则必须相同，$A_{i,j}=0$ 类似。
+考虑每行、每列建两个点分别表示该行或该点翻/不翻，每次两个状态之间有相互依赖关系就将两个点 merge 在一起，则存在方案数 $\Leftrightarrow$ 每一行/列翻和不翻的状态不在同一个集合里，最少操作数 $\Leftrightarrow$ 选择一些集合，使得集合之间不存在矛盾关系且集合中翻状态的个数最小，可以建 2-SAT 跑，也可以在并查集的时候弄点小 trick 直接统计，复杂度 $O(n^2)$</p>
+<h3 id="e-koraidon-miraidon-and-dfs-shortest-path">E - Koraidon, Miraidon and DFS Shortest Path</h3>
+<p>题意：给定一张有向图，问其在任意一种 dfs 序下得到的最短路数组是否均为正确的最短路数组</p>
+<p>首先建出最短路树，则对于非树边可以分为横叉边和返租边讨论，横叉边若 $dis_v&lt;dis_u+1$ 则不可行，否则可行；返租边若 $v$ 为 $u$ 的支配点则可行，否则不可行。支配点可以 $O(n\log n)$ 建出支配树，则 $u$ 在支配树上的祖先就是 $u$ 的支配点。最终复杂度 $O(n\log n)$</p>
+<p>备注：由于 DAG 的支配树比普通有向图的支配树好建很多，所以可以把返祖边先都拆掉得到一个 DAG 之后再建支配树，与原图得到的支配树相同</p>
+<h3 id="f-world-fragments-ii">F - World Fragments II</h3>
+<h3 id="g-beautiful-matrix">G - Beautiful Matrix</h3>
+<p>题意：求一个矩阵的中心对称子矩阵的个数</p>
+<p>二维 manacher 板子，可能需要卡常，复杂度 $O(nm)$</p>
+<h3 id="h-until-the-blue-moon-rises">H - Until the Blue Moon Rises</h3>
+<p>题意：给定一个数列，每次操作可以选定两个位置 $i,j$，使得 $A_i=A_i-1,A_j=A_j+1$，求经过任意多次操作，是否能把数列中的数都变成质数</p>
+<p>哥德巴赫猜想。每个奇数可以用不超过 $3$ 的素数表示，每个偶数可以用不超过 $2$ 个素数表示。由于每次操作前后数列的和不变，可以先把前 $n-3/n-2$ 个数都置为最小的素数 $2$，再尝试分配剩下的数，一些比较小的反例特殊讨论即可，复杂度 $O(n)$</p>
+<h3 id="i-to-the-colors-of-the-dreams-of-electric-sheep">I - To the Colors of the Dreams of Electric Sheep</h3>
+<p>题意：给出一棵树，一个人从其中一个节点向另一个节点移动。每个点有一些颜色，移动的人有一个颜色。人每次可以在一个点可以花费一秒移动到另一个有相同颜色的节点或者改变自己的颜色为当前节点拥有的另一个颜色，求从起点到终点需要的最少秒数。$q$ 次询问</p>
+<p>首先考虑 $O(q\sum len_{u,v})$ 的暴力：贪心，每次尽量往下走，走不下去的时候换成新的开始状态继续往下走，可以证明提前切换状态一定不会更优（可以模拟一下可能更好理解一点），转移是 $O(1)$ 的，所以现在就可以将原问题转移为枚举路径统计答案了。点分治、dsu on tree、倍增均可，随便选择一种即可，复杂度 $O((n+q)\log n)$，可以通过</p>
+<p>备注：倍增比点分治、dsu on tree 好的地方：比较便于求从下往上递推的值，不太擅长求从上往下递推的值（一般为从起点走向终点的类型）</p>
+<h3 id="j-fine-logic">J - Fine Logic</h3>
+<p>~~好好的签到题愣是被整成了送命题~~
+题意：给出一些人之间的先后关系，求最少的排名名单的个数使得所有的关系均能满足其中一个名单</p>
+<p>看到大小关系首先想到差分约束建图，然后就开始吭哧吭哧拆环，赛后发现其实关系只有两种：$x&lt;y$ 且 $x$ 在 $y$ 前/$x&lt;y$ 且 $x$ 在 $y$ 后，所以两个自然数排列就能搞定问题（$1,...,n$ 和 $n, ... ,1$），DAG 直接拓扑输出即可，复杂度 $O(n)$</p>
+<h3 id="k-world-fragments-iii">K - World Fragments III</h3>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

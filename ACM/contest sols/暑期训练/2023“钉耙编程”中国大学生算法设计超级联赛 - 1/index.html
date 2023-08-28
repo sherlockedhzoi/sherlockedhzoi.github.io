@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023 hdu 多校第一场 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023 hdu \u591a\u6821\u7b2c\u4e00\u573a";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u201c\u9489\u8019\u7f16\u7a0b\u201d\u4e2d\u56fd\u5927\u5b66\u751f\u7b97\u6cd5\u8bbe\u8ba1\u8d85\u7ea7\u8054\u8d5b - 1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023 hdu 多校第一场</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="2023-hdu">2023 hdu 多校第一场</h1>
+<h3 id="a-hide-and-seek-game">A - Hide-And-Seek Game</h3>
+<p>题意：有两个人在一棵树上游走，每个人的速度均为 $1$ 条边每秒，每个人都在两个固定的点之间循环，求两个人相遇的位置（两个人只能在点上相遇，不能在边上相遇）</p>
+<p>对于一个人而言，其到一个点的所有时间点可以被分成两个等差数列，考虑对每个人求出在每个点对应的等差数列，则两个人在一个点相遇可以等价为四个等差数列任选两个相等得到的最小的 $t$ 是所有点中最小的一个。等差数列相等可以转化为 ax-by=c 的形式，用 exgcd 求解即可得到最小的非负整数解，所有可能性取 min 即可，复杂度 $O(mn\log n)$，可以通过</p>
+<h3 id="b-city-upgrading">B - City Upgrading</h3>
+<p>题意：给出一棵树，求树点集的一个子集，要求每个点相邻的点中至少有一个点在该子集中（包括其自身），并且子集内点的点权和最小，求该点权和</p>
+<p>典型的树形 dp，定义 $dp_{i,0/1,0/1}$ 表示考虑第 $i$ 个点及其子树中的所有点，要求该点必选/非必选，该点的直接子节点是/否有点被选，转移即可，复杂度 $O(n)$</p>
+<h3 id="c-mr-liang-play-card-game">C - Mr. Liang play Card Game</h3>
+<p>题意：给出一排数，每次可以合并两个相邻的 level $k$ 的数得到一个 level $k+1$ 的相同的数，或者可以去掉一个数得到 $P^{k-1}V_i$ 的收入，其中 $k$ 为数的 level，$i$ 为数的大小，求最终能够得到的最大收入</p>
+<p>考虑 dp，定义 $dp_{l,r,x,y}$ 求最后区间 $[l,r]$ 剩下一张 level $x$ 的数 $y$ 时的最大收入，枚举分界点转移即可，复杂度 $O(n^3mR)$（$m$ 为值域的范围，$R$ 为 level 的范围）</p>
+<p>可惜的是考场上我想出来这种方法了，但是被 $R$ 的大数据范围骗了导致放弃了这种方法，实际上 $R$ 的范围只有 $\log n$，所以真正的复杂度应该是 $O(n^3m\log n)$，可以通过</p>
+<h3 id="d-amazing-spacecraft">D - Amazing spacecraft</h3>
+<h3 id="e-cyclically-isomorphic">E - Cyclically Isomorphic</h3>
+<p>题意：给出 $n$ 个字符串，每次给出一对 $x,y$，询问第 $x$ 个字符串和第 $y$ 个字符串是否循环相等</p>
+<p>看到循环相等可以想到最小表示法，然后就是板子了，复杂度 $O(\sum\limits_{i=1}^n len_i)$</p>
+<h3 id="f-escape-the-maze">F - Escape The Maze</h3>
+<p>题意：有一个带边权的树，每次在树上一个路径行动的代价为 $(s-L)^2$，$s$ 为路径的长度，$L$ 是一个常数，给定起点，求到任意一个叶子的最小代价</p>
+<p>首先有一个很简单的 dp：$dp_u=\sum\limits_{u \in subtree(v)} dp_v+(dep_u-dep_v-L)^2$，其中 $dep$ 为加权深度。将二次项展开后就是一个很板子的斜率优化 dp 了，由于 $x$ 不单调所以要用李超树（线段树维护凸包），再加上是树上 dp 所以需要可持久化李超树，最后可能还需要卡卡常，复杂度 $O(n\log n)$</p>
+<p>另外今天知道了一件事，原来在代码里的 O2 优化是 G++ 才能用的，找个小本本记下来。。。</p>
+<h3 id="g-travel">G - Travel</h3>
+<h3 id="h-umamusume">H - Umamusume</h3>
+<p>题意：有一个游戏，分成 $n$ 轮进行，每轮有三种选择：
+1. TP += 50
+2. TP -= 50 $\sf\ and\ $ sp += 15
+3. TP -= 50 $\sf\ and\ $ money+=100G</p>
+<p>其中 money 可以用来在商店买物品，商店中物品的列表如下：
+|   item name  |     price    |      function      |
+| -----------: | -----------: |    -----------:    |
+|TP Medicine(L)|     100G     |    add 100 TP      |
+|TP Medicine(M)|      50G     |     add 50 TP      |
+|TP Medicine(S)|      25G     |     add 25 TP      |
+|Magic Book(L) |     100G     | add 15 speed points|
+|Magic Book(M) |      50G     | add 7 speed points |
+|Magic Book(S) |      25G     | add 3 speed points |
+|     Horn     |     100G     | next training speed points will become 2x |
+|    Weight    |     200G     | next training speed points will spend 100 TP but become 3x |</p>
+<p>其中每个商品都有 $p$ 的概率在 $6$ 轮中出现一次，购买可以发生在任意时刻，与上述选择不冲突，要求在 $n$ 轮内达到最大的 sp，求在采取最优策略的情况下，最后得到 sp 的期望值</p>
+<p>首先主要概率的来源在于那些商品，所以首先可以先研究一下这些物品的效果。很容易发现其实所有的商品都是没有用的（因为与其用 TP 换钱再增加 sp，还不如直接增加 sp，这样增加的 sp 更多），这样最佳的选择就变成了 TP += 50 和 TP -= 50, sp += 15 的循环</p>
+<p>偶数只要按照上述策略即可得到最大的 sp，所以偶数轮的结果是确定的，而奇数轮采用上述策略则会剩下一轮没事干，我们可以通过在最开始先进行一次 TP -= 50, money += 100G 并且在之后购买一个 TP Medicine(M) 或两个 TP Medicine(S) 在保持 TP 不变的前提下获得额外的 50G 的初始资金，于是就可以以此购买 Magic Book(M) 和 Magic Book(S) 得到额外的 sp，可能的额外 sp 一共是 0/3/6/7 这四种情况，分类讨论即可，复杂度 $O(T\log n)$</p>
+<p>注意还有一些细节：商店是每六轮刷新一次的（因为这个挂了一次。。。）</p>
+<h3 id="i-assertion">I - Assertion</h3>
+<p>题意：给出 $T$ 个断言，每个形如“如果将 $m$ 个物品分成 $n$ 组，每组至少有 $d$ 个物品”，判断其是否正确</p>
+<p>一眼鸽巢原理，直接过，复杂度 $O(T)$</p>
+<h3 id="j-easy-problem-i">J - Easy problem I</h3>
+<p>题意：维护一个数据结构，支持区间设为 $a_i=|a_i-x|$ 和区间和，满族特殊条件：修改的 $x$ 是递增的</p>
+<p>~~论考场上想出正解，结果在写代码的时候自己把自己绕偏后的感受。。。~~
+虽然这么说，但本质上还是忘了只要是双参数的转换方程就得按 kx+b 的形式维护了的过</p>
+<p>解法不多说，看到绝对值立刻想到分类讨论，然后用线段树维护，根据特殊性质很容易发现变成 $a_i=x-a_i$ 的 $i$ 不会在后面变回去，于是可以直接暴力转移即可，单次操作均摊复杂度 $O(\log n)$，总复杂度 $O(m\log n+n\log n)$，可以通过</p>
+<h3 id="k-easy-problem-ii">K - Easy problem II</h3>
+<p>题意：维护一个数据结构，支持区间修改为 $a_i=\begin{cases}x-a_i&amp;,a_i&lt;x\x+a_i&amp;,a_i \geq x\end{cases}$ 和区间求和</p>
+<p>~~emmm... 调了一天，最后发现居然是我的 Splay 写挂了~~
+思路其实很简单，很容易发现操作前后不改变操作区间内数的大小关系，所以可以考虑划分区间，每个区间用一个平衡树维护，分段求解。区间的分割方法一般有线段树/分块，这里因为里面还有一层平衡树，所以分块即可，复杂度 $O(n\sqrt n\log\sqrt n)$。但其实分块之后会发现只有整块的单词操作复杂度是 $O(\log n)$，其余均为 $O(1)$，所以可以进一步优化为 $O(n\sqrt{n\log n})$，但由于查询都是 $O(1)$ 的所以复杂度本质上没有那么大，调调块大小一般就过了
+P.S. 在 hdu 改题的一些经验：
+- 不知道为啥 hdu 的快读、scanf 都很慢，一般遇到 TLE 建议先加上神读试试
+- hdu 输出在 stderr 的结果也会输出到答案文件里，所以调试注意要删全</p>
+<h3 id="l-play-on-tree">L - Play on Tree</h3>
+<p>结论题，子树的选取是博弈论的经典题型。
+当根确定时，SG 函数推导公式为 $SG_u=\bigoplus\limits_{v \in son(u)}(SG_v+1)$，要求概率就得求所有点做根时根的 SG 函数值，换根 dp 即可，复杂度 $O(n)$</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

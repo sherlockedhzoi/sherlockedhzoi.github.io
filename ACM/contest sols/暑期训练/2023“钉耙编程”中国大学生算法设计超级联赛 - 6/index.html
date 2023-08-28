@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023“钉耙编程”中国大学生算法设计超级联赛（6） - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u201c\u9489\u8019\u7f16\u7a0b\u201d\u4e2d\u56fd\u5927\u5b66\u751f\u7b97\u6cd5\u8bbe\u8ba1\u8d85\u7ea7\u8054\u8d5b\uff086\uff09";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u201c\u9489\u8019\u7f16\u7a0b\u201d\u4e2d\u56fd\u5927\u5b66\u751f\u7b97\u6cd5\u8bbe\u8ba1\u8d85\u7ea7\u8054\u8d5b - 6.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023“钉耙编程”中国大学生算法设计超级联赛（6）</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20236">2023“钉耙编程”中国大学生算法设计超级联赛（6）</h1>
+<h3 id="1001-count">1001. Count</h3>
+<p>题意：求满足 $A[1:k] = A[n-k+1:n]$ 的数组个数（值域为 $[1,m]$）</p>
+<p>签到题，很容易发现原数组的循环节是 $n-k$，所以只要循环节内的数字确定即可，最终答案即为 $m^{n-k}$，输出即可，复杂度 $O(T\log n)$</p>
+<p>~~场上不知道为啥一直在纠结 $k$ 和 $n-k$ 的大小关系，导致最终喜提 -3（虽然最终没啥太大影响的样子就是了）~~</p>
+<h3 id="1002-pair-sum-and-perfect-square">1002. Pair Sum and Perfect Square</h3>
+<p>题意：给定一个排列，给定 $l,r$，求 $[l,r]$ 内满足 $p_i+p_j$ 为完全平方数的 $(i,j)$ 无序点对个数</p>
+<p>首先很容易发现满足条件的点对数是 $O(n\sqrt{n})$ 级别的，将询问离线下来从左往右扫右端点就变成了单点 $+1$，区间求和的经典问题，其中修改数为 $O(n\sqrt n)$ 的，询问数为 $O(q)$ 的，修改数明显多于询问数，优先考虑分块，$O(1)$ 单点修改，$O(B+\frac nB)$ 区间查询，最终时间复杂度 $O(n\sqrt n+q(B+\frac nB))$，当 $B=\sqrt n$ 时取到最优复杂度 $O((n+q)\sqrt n)$，可以通过</p>
+<h3 id="1003-vector">1003. Vector</h3>
+<p>题意：给定四个三维向量 $A_1,A_2,A_3,A_4$，求是否存在非负实数 $x_1,x_2,x_3$ 满足 $x_1A_1+x_2A_2+x_3A_3=A_4$</p>
+<p>分类讨论。考虑按向量的相关性分类讨论：
+- 当 $A_1,A_2,A_3$ 线性无关时：直接高斯消元即可
+- 当 $A_1,A_2$ 线性相关，$A_3$ 与 $A_1,A_2$ 线性无关时：四个向量共面
+    - 当 $A_1,A_2$ 同向时：用 $A_2,A_3$ 高斯消元即可
+    - 当 $A_1,A_2$ 反向时：$A_3$ 与 $A_4$ 在 $A_1,A_2$ 同侧
+- 当 $A_1,A_2,A_3$ 两两线性相关时：
+    - 三个向量同向：$A_4$ 与 $A_1$ 同向
+    - 否则：$A_4$ 与 $A_1$ 共线即可</p>
+<p>说了这么废话，其实也可以直接枚举 ${A_1,A_2,A_3}$ 的子集，每个高斯消元一下，有一个有解即可 ~~（本质就是乱搞，毕竟数据很小）~~，最终复杂度 $O(T*可过)$ 即可</p>
+<h3 id="1004-tree">1004. Tree</h3>
+<p>题意：有一棵树，每个点有一个颜色 $a/b/c$，统计 $a,b,c$ 三种颜色出现次数相同的简单路径数</p>
+<p>经典路径统计问题，直接 dsu on tree/点分治 即可，具体来说就是用 $(cnt_a-cnt_b,cnt_b-cnt_c)$ 作为桶的下标，用 $(cnt_b-cnt_a,cnt_c-cnt_b)$ 查询一个点对应的链能匹配的链的个数即可，点分治就是直接做，dsu on tree 可能需要加一个零点偏移，复杂度都是 $O(n\log n)$，可以通过</p>
+<h3 id="1005-meadow">1005. Meadow</h3>
+<p>题意：求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^m sumL_{i,j}*B_{i,j} {\rm\ mod\ }1e9+7$，其中 $sumL_{i,j}$ 表示覆盖 $(i,j)$ 的所有不同的全 $1$ 正方形的边长和</p>
+<p>首先，所有的全 $1$ 正方形是 $O(n^3)$ 级别的，所以正方形一定是没办法枚举的，需要想办法分类统一处理</p>
+<p>首先考虑按右下角的位置分类，可以发现满足条件的全 $1$ 正方形的边长构成了一个类似 $[1,r_{i,j}]<em>\mathbb Z$ 的连续区间，其中 $r</em>{i,j}$ 可以通过一个简单的 dp 得到</p>
+<p>接下来考虑对于 $[i-r_{i,j}+1:i,j-r_{i,j}+1,j]$ 这个方形内的所有点，这些以此为右下角的方形产生的贡献，可以发现会变成子矩阵矩阵加一个类似这样的图样
+$$\begin{matrix}
+r_{i,j} &amp; r_{i,j} &amp; \cdots &amp; r_{i,j} &amp; 0\
+r_{i,j} &amp; r_{i,j}+(r_{i,j}-1) &amp; \cdots &amp; r_{i,j}+(r_{i,j}-1) &amp; 0\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\
+r_{i,j} &amp; r_{i,j}+(r_{i,j}-1) &amp; \cdots &amp; \frac{r_{i,j}(r_{i,j}+1)}2 &amp; 0\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0\
+\end{matrix}$$
+将这个加的矩阵二维差分一下，就可以得到如下的矩阵
+$$\begin{matrix}
+r_{i,j} &amp; 0 &amp; \cdots &amp; 0 &amp; -r_{i,j}\
+0 &amp; r_{i,j}-1 &amp; \cdots &amp; 0 &amp; -(r_{i,j}-1)\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\
+0 &amp; 0 &amp; \cdots &amp; 1 &amp; -1\
+-r_{i,j} &amp; -(r_{i,j}-1) &amp; \cdots &amp; -1 &amp; \frac{r_{i,j}(r_{i,j}+1)}2\
+\end{matrix}$$
+很明显差分的矩阵可以分成三个等差数列和一个点，三个等差数列可以二阶差分之后变成三个单点的加减，所以最终需要的操作就变成了 $10$ 次单点加减，最后做三个一维二阶后缀和和一个二维一阶前缀和即可，复杂度 $O(\sum Cn^2)$，其中 $C$ 为常数，可以通过（注意加快读）</p>
+<h3 id="1006-perfect-square-number">1006. Perfect square number</h3>
+<p>题意：给定序列 $a$，求改变其中一个数，最多可以使多少个区间的和为完全平方数</p>
+<p>考虑对于数改变的位置 $p$，其改变会造成影响的区间一共有 $O(n^2)$ 个，而最终可能的完全平方数的结果可能有 $O(n)$ 个，所以我们可以先 $O(n^2)$ 预处理出所有改变区间在去掉 $a_p$ 之后的原始值，然后枚举 $a_p$ 变成的值，再枚举每个完全平方数去桶里收集答案，就可以在 $O(n^2)$ 的时间复杂度内求出改动 $a_p$ 的答案，再枚举所有 $a_p$ 取 $max$ 即可，复杂度 $O(n^3+nV\sqrt{nV})$，其中 $V$ 代表值域大小，由于 $n,V$ 同阶，可以将复杂度化简为 $O(n^3)$，可以通过</p>
+<h3 id="1007-competition">1007. Competition</h3>
+<!--
+题意：
+
+这里提供一种有点像 ctf 的做法：（以下做法仅适用于平常练习，请勿在正式考试中使用 ~~毕竟也不会有用的~~）
+
+考虑二分爆破，众所周知，由于 hdu 的数据只有 $1$ 组，于是可以用 RE/WA 加上判断结合二分在 $O(\log n\log m)$ 次提交后特定出数据中的 $n,m$ 大小，然后就变成提交答案题了，本地写一个 $O(nm)$ 的 dp 求解即可
+-->
+<h3 id="1008-alice-and-bob">1008. Alice and Bob</h3>
+<p>题意：二人博弈，每个人一次操作会选择一个位置将原序列分成两段长度不为 $0$ 的序列，剩下较大的那一段，无法操作的一方胜利，必胜的人会最大化剩下的数，必败的人则会最小化剩下的数，求最终剩下的数的结果</p>
+<p>博弈论 dp，定义 $win_{l,r}$ 表示剩下 $[l,r]$ 时先手必胜/必败，$dp_{l,r}$ 表示 $[l,r]$ 最后会剩下的数，直接转移复杂度是 $O(n^3)$ 的，很容易发现对于一段区间 $[l,r]$，其前驱状态是类似这样的：$[l+1,r],[l+2,r],...,[pos,r],[l,pos+1],...,[l,r-2],[l,r-1]$，且对于相同的 $l/r$，$pos$ 的位置是单调的，于是就可以每个点分别开两个从左到右的单调队列和从右到左的单调队列分别维护前缀最大、前缀最小、后缀最大、后缀最小转移即可，复杂度 $O(Tn^2)$，可以通过</p>
+<p>注：\
+其实实际可以将 $4n$ 个单调队列缩减为 $2n$ 个，因为如果一个状态是必胜态的话，其可能的后继必败态最多有两个（一个必败态的前驱和后继一定都是必胜态），但复杂度上没什么优化，码量也差不了多少，就当是一个小结论记住吧。</p>
+<h3 id="1009-coloration">1009. Coloration</h3>
+<h3 id="1010-calculate">1010. Calculate</h3>
+<p>题意：给定一个环森林，一个人从 $x$ 开始游走 $l$ 步，每到一个节点，自己手中的权值 $y$ 就会变为 $k_iy+b_i$，求该人游走完毕后手中权值的大小，$q$ 次询问</p>
+<p>首先很明显先后两次操作 $(k_i,b_i),(k_j,b_j)$ 可以合为一个 $(k_ik_j,k_jb_i+b_j)$，然后对于多次相同的合并，由于合并的运算满足结合律，可以考虑倍增求解，复杂度 $O((n+q)\log l)$</p>
+<h3 id="1011-string">1011. String</h3>
+<p>题意：给定一个文本串 $S$ 和多个模式串 $T$，对每个模式串求随机选择模式串的一个子串，其在文本串的多少子串中出现过的期望值</p>
+<p>首先可以对 $S$ 建 SAM，让 $T$ 在 SAM 上跑，这样就可以将 “ $T$ 的子串在 $S$ 的多少子串中出现过 ” 这个问题转化为 “ $S$ 的每个子串在 $S$ 的多少子串中出现过 ”，然后对于询问，直接在 SAM 上跑，每次求一个链前缀和即可。链前缀和可以 $O(n)$ 预处理，所以答案就变成了求 “ $S$ 的每个子串在 $S$ 的多少子串中出现过 ” 这个问题的答案</p>
+<p>容易发现上述问题可以进一步转化为这样的一个问题：给你一些长度相同区间，求有多少区间覆盖了其中的任意一个区间，这个问题的答案可以通过求其逆命题，即不覆盖任意一个区间得到，所以对于节点 $u$ 的长度为 $len$ 的子串的最终答案就是这个式子：
+$$\frac{n<em>(n+1)}2-\sum\limits_{i=0}^{cnt}\left(\frac{(r_{i+1}-r_i+len-2)</em>(r_{i+1}-r_i+len-1)}2-2\right)$$
+其中 $r_0=len-1,r_{cnt+1}=n+1,r_i \in endpos(u)$</p>
+<p>很明显这个式子可以拆成类似 $k*len+b$ 的形式，而对于一个节点的所有字符串的 $len$ 都是连续的，所以只要求出每个节点的 endpos 集合并在求这个集合的时候动态维护 $k,b$ 的值即可求出每个点对应所有子串的答案的和，做法有很多，线段树合并、dsu on tree 等均可，复杂度 $O(Tn\log n) \sim O(Tn\log^2n)$，可以通过</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023“钉耙编程”中国大学生算法设计超级联赛（5） - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u201c\u9489\u8019\u7f16\u7a0b\u201d\u4e2d\u56fd\u5927\u5b66\u751f\u7b97\u6cd5\u8bbe\u8ba1\u8d85\u7ea7\u8054\u8d5b\uff085\uff09";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u201c\u9489\u8019\u7f16\u7a0b\u201d\u4e2d\u56fd\u5927\u5b66\u751f\u7b97\u6cd5\u8bbe\u8ba1\u8d85\u7ea7\u8054\u8d5b - 5.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023“钉耙编程”中国大学生算法设计超级联赛（5）</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20235">2023“钉耙编程”中国大学生算法设计超级联赛（5）</h1>
+<p>~~作为最近几天最水的一场打的却是最烂的。。。~~</p>
+<h3 id="1001-typhoon">1001. Typhoon</h3>
+<p>题意：给出一堆点和一条折线，求每个点到折线上的点的最短距离</p>
+<p>对于每个点暴力求其到所有线段的距离取 min 即可，复杂度 $O(nm)$
+~~本来看 $n,m=1e4$ 还觉得有点悬，队友不信交了一发过了，然后就没有然后了~~</p>
+<h3 id="1002-gcd-magic">1002. GCD Magic</h3>
+<p>题意：求 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n [gcd(2^i-1,2^j-1)]^K$</p>
+<p>本来把 gcd 拆成了 $\sum\limits_{d \vert i,d \vert j} \varphi(d)$，然后在 $\sum\limits_{i=1}^n 2^{\varphi(i)k}$ 上卡住了，考场上就没做出来</p>
+<p>实际上我们可以考虑换一种 gcd 的拆法：$gcd(i,j)=\sum\limits_{d=1}^n d\sum\limits_{i=1}^{\lfloor\frac nd\rfloor}\sum\limits_{j=1}^{\lfloor\frac nd\rfloor}[gcd(i,j)=1]$，这样就可以将指数上的 gcd 拆下来，然后就是一个莫反的板子了，最终用上杜教筛时间复杂度为 $O(Tn^{\frac 23}(\log n+K))$，有点悬，不过还是成功过去了</p>
+<h3 id="1003-string-magic-easy-version">1003. String Magic (Easy Version)</h3>
+<p>题意：给出一个字符串，求其中回文重串的个数</p>
+<p>这个题的答案本质上就是下一题中 $ans_n$ 的答案，解法见下
+~~虽然也有 manacher 的解法，但比回文自动机麻烦多了，所以建议直接写回文自动机~~</p>
+<h3 id="1004-string-magic-hard-version">1004. String Magic (Hard Version)</h3>
+<p>题意：给出一个字符串，求其各个前缀的回文重串个数</p>
+<p>各个前缀 + 回文串立刻可以想到回文自动机，我们可以先把回文自动机的 fail 树先建出来，这样的话问题就变成了：给定一棵树，给定 $q$ 次询问，每次询问从根节点到 $u$ 的所有点的权值构成的集合 $S$ 中，有多少个元素 $v$ 满足 $v \in S,\frac v2 \in S$，最后再对所有询问求一个前缀和就是各个前缀对应的答案</p>
+<p>这样我们就可以直接离线，在从上往下遍历的时候用个桶记录都有哪些元素出现过，递归加入，回溯删除，这样就可以直接求出结果，复杂度 $O(n)$</p>
+<p>扩展：如果本题改成强制在线询问的形式的话，我们可以利用“回文串的所有回文后缀构成 $O(log n)$ 段等差数列”这一经典性质通过求两个等差数列交集的形式求出答案，时间复杂度 $O(n\log^3n)$，其中两个 $\log$ 是等差数列对的枚举，一个 $\log$ 是 exgcd 求解 $ax+b=cy+d$</p>
+<h3 id="1005-snake">1005. Snake</h3>
+<p>题意：已知有 $n$ 条蛇，他们长度都是 $1$，在将其中一些蛇首尾相接后，剩下 $m$ 条蛇，且每条蛇的长度不超过 $k$，求首尾相接的方案数</p>
+<p>简单的容斥，最后推出来的式子是 ${n! \over m!}\sum\limits_{i=0}^m (-1)^i\binom mi \binom{n-1-ik}{m-1}$，其中 $\binom{n-1-ik}{m-1}$ 表示将 $n$ 条蛇接成 $m$ 条蛇，其中至少有 $i$ 条长度 $&gt;k$ 的方案数，求解即可，复杂度 $O(m)$</p>
+<h3 id="1006-touhou-red-red-blue">1006. Touhou Red Red Blue</h3>
+<p>题意：有 $n$ 个 UFO 和两个包，其中 UFO 分为 RGB 三种。初始两个包都是空的，一个人按次序选择要不要第 $i$ 个 UFO，要就放到空包里（优先放第一个包），包满了就进行判断：三个一样的 $\Rightarrow$ 清空，得分 $+1$ 并得到一个任意颜色的 UFO，三个互不相同的 $\Rightarrow$ 清空并得到两个任意颜色的 UFO，否则 $\Rightarrow$ 扔掉第一个包里的 UFO，第二个包里的放到第一个包里，新来的放第二个包里，求最终的最高得分</p>
+<p>考虑 dp，定义 $dp_{i,0/1/2/3,0/1/2/3}$ 表示选到第 $i$ 个 UFO，两个包里放 UFO 的状态，按照题目要求转移即可（这里从前找后比较好写），复杂度 $O(n)$</p>
+<h3 id="1007-expectation-easy-version">1007. Expectation (Easy Version)</h3>
+<p>题意：求解 $\sum\limits_{k=1}^n \binom nip^k(1-p)^{n-k}\sum\limits_{i=1}^k i^m{\rm\ mod\ } 998244353$，$n \leq 1e6,m&lt;998244353$</p>
+<p>双重循环之间相互独立，先预处理出中间的循环之后直接求和即可，复杂度 $O(Tn\log n)$，可能需要卡卡常</p>
+<h3 id="1008-expectation-hard-version">1008. Expectation (Hard Version)</h3>
+<p>题意：求解 $\sum\limits_{k=1}^n \binom nip^k(1-p)^{n-k}\sum\limits_{i=1}^k i^m{\rm\ mod\ } 998244353$，$n&lt;998244353,m \leq 1e6$</p>
+<h3 id="1009-tree">1009. Tree</h3>
+<p>题意：给出一棵树和它的一种“重链剖分”，按照将“轻儿子”对应重链的线段树的根接在当前节点在线段树上对应节点下的方式构造线段树，线段树构造方法为建造 $n$ 个叶子节点的完全二叉树，求每个树上的节点在线段树上对应节点的最大深度（线段树根的深度为 $1$）</p>
+<p>对于一个点，其深度为 $\sum\limits_{x \in S} \lceil\log_2len_x\rceil+1$，其中 $S$ 表示其到根节点所经过的所有链的集合，$len_x$ 表示链 $x$ 的长度，对所有的点求解一下大小最后对所有点取 max 即可，复杂度 $O(n)$</p>
+<h3 id="1010-cut-the-tree">1010. Cut The Tree</h3>
+<p>题意：给定一棵树，每个点有一个点权。两个人在这棵树上博弈，Alice 首先选择一条边切掉，Bob 然后选择其中一个子树，给 Alice 另一个子树，两人分别从自己的子树中选择两个点，最终各自得分为各自选择的两个点点权的异或和，两人都想最大化自己和另一个人的得分差，求在最优策略下 Bob 和 Alice 的分差</p>
+<p>博弈论经典倒退，首先考虑已经选出子树之后，很明显两个人为了让分叉最大化都会选择自己子树中点权异或和最大的两个点，容易发现这样的结果对于一科确定的子树是确定的，这样剩下的博弈过程就可以转化为有 $n$ 组数，两个人博弈，Alice 选 $1$ 组，Bob 选这一组中的一个，给 Alice 另外一个，两人都想最大化分差，求最优策略下的最终得分。很容易想到答案就是 $\min\limits_{i=1}^{n-1}|max_{T_{i1}}-max_{T_{i2}}|$，其中 $max_{T_{i1/2}}$ 表示第 $i$ 条边分成的两个子树分别对应的最大点对异或和，然后问题就变成了求所有的 $max_{T_{i1/2}}$ 的值，对于这个求的方法就比较多了，什么边分治、01Trie 合并，这里介绍一种相对简单的方法</p>
+<p>对于一条边，可以分为子树和除了子树之外的部分，子树内可以用 dsu on tree + 01 Trie 统计，时间复杂度 $O(n\log n\log V)$ 除了子树之外的部分可以先找出来整树的最大异或点对，然后对于不是两个点的祖先链上的边，其除了子树之外的答案就是这个点对，其他的点可以依次暴力插入对应的子树，复杂度 $O(n\log V)$，最后总时间复杂度 $O(n\log n\log V)$，可以通过</p>
+<h3 id="1011-cactus-circuit">1011. Cactus Circuit</h3>
+<p>题意：给一个仙人掌，每条边有一个最长维持时间，问在最多能维持仙人掌连通多久</p>
+<p>对于一个环，我们一定最多只能段一条边，那么每个环我们有这样的一个最优策略：首先断最小的那条边，等次小的边断开的同时脸上最小的边，这样第三小的边和最小的边任意一个断了之后环都一定无法再次连通，所以答案就是 $\min({min}<em>{1,i}+{min}</em>{2,i},min_{3,i})$，整个仙人掌就对所有的环取 min 即可，复杂度 $O(n)$</p>
+<p>~~点双加边有点麻烦，可能需要一点技巧，场上被卡住了，以后也许可以当板子记上~~</p>
+<h3 id="1012-counting-stars">1012. Counting Stars</h3>
+<p>题意：给出一张无向图，求其中各种大小的菊花子图的个数</p>
+<p>首先很容易想到 $ans_k=\sum\limits_{i=1}^n \binom{deg_i}k$，容易发现每个点可以做出贡献的 $ans_k$ 满足 $1 \leq k \leq deg_u$，故直接暴力求即可，复杂度 $O(n+\sum deg_i)=O(n+m)$，可以通过</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

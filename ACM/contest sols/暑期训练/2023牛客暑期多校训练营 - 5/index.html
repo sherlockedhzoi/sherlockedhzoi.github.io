@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023牛客暑期多校训练营5 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u84255";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u8425 - 5.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023牛客暑期多校训练营5</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20235">2023牛客暑期多校训练营5</h1>
+<h3 id="a-jujubesister">A - Jujubesister</h3>
+<h3 id="b-circle-of-mistery">B - Circle of Mistery</h3>
+<h3 id="c-cheeeeen-the-cute-cat">C - Cheeeeen the Cute Cat</h3>
+<p>题意：给定一个稠密二分图，满足 $1 \sim n,n+1 \sim 2n$ 之间两两不相连，$i,j+n$ 相连 $\Leftrightarrow i+n,j$ 不相连，$i,i+n$ 不相连，求原图的最大匹配</p>
+<p>大胆猜结论，当有点没有出度时答案为 $n-1$，否则答案为 $n$，可以通过</p>
+<h3 id="d-cirnos-perfect-equation-class">D - Cirno's Perfect Equation Class</h3>
+<p>题意：给定 $k,c,n$，求满足 $ka+b=c,a \geq 0, b \geq 0,b \vert c,gcd(a,b) \geq n$ 的 $(a,b)$ 对数</p>
+<p>本来以为是 exgcd，结果注意到 $b \vert c$，所以可以直接枚举 $c$ 的因数暴力判断，复杂度 $O(q\sqrt{c}\log c)$</p>
+<h3 id="e-red-and-blue-and-green">E - Red and Blue and Green</h3>
+<p>题意：给定一些相互包含/相离的区间，要求每个区间的逆序对个数为奇数/偶数，求一个满足条件的排列</p>
+<p>由于区间都是相包含/相离的，所以我们可以将所有长度为 $1$ 的区间加上之后将所有的需求建成一棵树，每次要完成一个区间，要么就是所有子区间直接拼起来，要么就是需要其中一些区间中的值交换一下，使得区间的逆序对数奇偶性反转后满足条件。一个很容易想到的构造方案就是选择任意两个相邻的直接子区间，交换前一个的最大值和后一个的最小值，这样得到的排列逆序对数正好增加 $1$，最后得到的就是合法的答案。注意可能存在矛盾的条件，只有这种时候需要输出 $-1$。复杂度 $O(n^2)$，可以通过</p>
+<h3 id="f-nocruelty">F - NoCruelty</h3>
+<h3 id="g-go-to-play-maimai-dx">G - Go to Play Maimai DX</h3>
+<p>题意：给定一个数列，值域为 $1 \sim 4$，求最小的包含所有四种数并且包含至少 $4$ 个 $4$ 的区间长度</p>
+<p>签到题，双指针或二分均可，复杂度 $O(n) \sim O(n\log n)$，可以通过</p>
+<h3 id="h-nazrin-the-greeeeeedy-mouse">H - Nazrin the Greeeeeedy Mouse</h3>
+<p>题意：有 $n$ 个物品和 $m$ 个容量不同的背包，背包的容量递减，每个背包可以选择一段连续区间的部分物品装入，不同背包对应的区间不能相交，求能得到物品最大权值和</p>
+<p>有一个很明显的 dp：$dp_{i,j}$ 表示前 $i$ 轮选择了 $[1,j]$ 区间内的部分物品得到的最大权值和，之后就是一个简单的一维区间 dp 转移了，每个区间的价值可以事先用背包 dp 求出，复杂度 $O(mn^2+n^3)$</p>
+<p>场上我们就卡在了这里，其实有一个很显然的结论：需要的背包个数 $\leq n$，因为每个物品最多用一个背包装，所以只用取最后 $n$ 轮的背包跑即可，时间复杂度 $O(n^3)$，可以通过</p>
+<p>~~事后看别人代码才想到，悔死。。。~~</p>
+<h3 id="i-the-yakumo-family">I - The Yakumo Family</h3>
+<p>题意：给定序列 $a$，求 $\sum\limits_{1 \leq l_1 \leq r_1&lt; l_2 \leq r_2 &lt; l_3 \leq r_3 \leq n} XOR(l_1,r_1) \cdot XOR(l_2,r_2) \cdot XOR(l_3,r_3)$，其中 $XOR(l,r)=\bigoplus\limits_{i=l}^r a_i$</p>
+<p>首先很明显可以将区间异或和改为点对异或和，由于异或的线性性，我们可以将原问题拆解为 
+$$\begin{align<em>}
+&amp;\sum\limits_{1 \leq l_3 \leq r_3 \leq n} XOR(l_3,r_3)\sum\limits_{1 \leq l_2 \leq r_2&lt;l_3}XOR(l_2,r_2)\sum\limits_{1 \leq l_1 \leq r_1 &lt;l_2} XOR(l_1,r_1)\
+=&amp;\sum\limits_{0 \leq l_3 &lt; r_3 \leq n} (pre_{r_3} \oplus pre_{l_3})\sum\limits_{0 \leq l_2 &lt; r_2 \leq l_3} (pre_{r_2} \oplus pre_{l_2})\sum\limits_{0 \leq l_1 &lt; r_1 \leq l_2} (pre_{r_1} \oplus pre_{l_1})\
+=&amp;\sum\limits_{0 \leq l_3 &lt; r_3 \leq n}\sum\limits_k(pre_{r_3}[k] \oplus pre_{l_3}[k])2^k\sum\limits_{0 \leq l_2 &lt; r_2 \leq l_3}\sum\limits_k(pre_{r_2}[k] \oplus pre_{l_2}[k])2^k\sum\limits_{0 \leq l_1 &lt; r_1 \leq l_2}\sum\limits_k(pre_{r_1}[k] \oplus pre_{l_1}[k])2^k
+\end{align</em>}$$
+其中 $a[k]$ 表示数 $a$ 在二进制表示中第 $k$ 位上的数</p>
+<p>而这样的问题可以转化为重复三遍一个更小的子问题：对所有 $i$ 求解 $val_i=\sum\limits_{r=1}^i\sum\limits_{l=0}^{r-1}\sum\limits_k (pre_l[k] \oplus pre_r[k]) * 2^k * preval_l, preval_i=\max(preval_{i-1},val_i)$，这样只需要一个简单的前缀和即可，复杂度 $O(n\sqrt V)$，可以通过</p>
+<h3 id="j-oil">J - OIL</h3>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

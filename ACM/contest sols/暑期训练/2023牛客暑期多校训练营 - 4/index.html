@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>2023牛客暑期多校训练营4 - sherlocked_hzoi's blog</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u84254";
+        var mkdocs_page_input_path = "ACM/contest sols/\u6691\u671f\u8bad\u7ec3/2023\u725b\u5ba2\u6691\u671f\u591a\u6821\u8bad\u7ec3\u8425 - 4.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> sherlocked_hzoi's blog
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../">Blog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">sherlocked_hzoi's blog</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li class="breadcrumb-item active">2023牛客暑期多校训练营4</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="20234">2023牛客暑期多校训练营4</h1>
+<h3 id="a-bobo-string-construction">A - Bobo String Construction</h3>
+<p>题意：给定一个串 $t$，让你构造一个串 $s$ 使得 $t+s+t$ 中 $t$ 只出现了两次</p>
+<p>转化一下题意，本质上就是要求 $t$ 的所有 border 不作为 $s$ 的前缀/后缀出现，很容易发现全 $0$ 和全 $1$ 的串至少有一个满足条件（$t$ 全 $0$ 则 $s$ 全 $1$，$t$ 全 $1$ 则 $s$ 全 $0$，其余任意），两个都跑一遍 KMP 判断是否可行之后输出即可，复杂度 $O(n)$</p>
+<h3 id="b-bobo-string-count">B - Bobo String Count</h3>
+<h3 id="c-best-carry-player">C - Best Carry Player</h3>
+<h3 id="d-classical-problem">D - Classical Problem?</h3>
+<h3 id="e-double-it-or-give-it-to-the-next-person">E - Double it or Give it to the Next Person</h3>
+<h3 id="f-election-of-the-king">F - Election of the King</h3>
+<p>题意：有 $n$ 个人竞选国王，每个人有个政治倾向指数 $a_i$，投 $n-1$ 轮票，每轮淘汰一个人，最后剩下的人当国王。每个人在投票时会选和自己政治倾向指数偏差最大的人，有多个的情况下优先选右倾，收到最多票数的人淘汰，票数相同则标号更大的人淘汰，求谁是国王</p>
+<p>很容易发现每轮被淘汰的一定是政治倾向指数最大/最小的人，然后投每个人的所有人在值域上存在于一个连续的区间内，所以可以直接二分两种区间的分界点，判断每次是谁被淘汰，模拟 $n-1$ 轮即可，复杂度 $O(n\log n)$</p>
+<h3 id="g-famished-felbat">G - Famished Felbat</h3>
+<h3 id="h-merge-the-squares">H - Merge the squares!</h3>
+<p>题意：给定一个 $n<em>n$ 的矩阵，每次可以聚合一个子正方形个数在 $[2,50]$ 之间的子正方形，求一种聚合 $n</em>n$ 矩阵的方案，要求步数 $\leq 1e6$</p>
+<p>考虑一个正方形的聚合方法，可以是由一个正方形和一个 L 聚合而成，也可以由两个正方形和两个长方形聚合而成，对于 L 和长方形都可以用一种类似 gcd 的方法将其转化为求子 L + 子正方形 or 子长方形 + 子正方形的问题，由于 gcd 的复杂度证明很容易发现这样构造出来的方案一定是合法的，这样只需要 dp 出最小的答案即可，复杂度 $O(n^2) \sim O(n^2\log n)$，均可以通过</p>
+<h3 id="i-portal-3">I - Portal 3</h3>
+<p>题意：有一张 $n$ 个点的有向完全图，要求你在上面按照一定的顺序游走，并且你可以选择其中的一对点将他们之间的距离置零，求游走总距离的最小值</p>
+<p>由于游走过程中图是不变的，所以可以将原问题拆解到每条边上。设经过 $(u,v)$ 的次数为 $cnt_{u,v}$，则原问题可以转化为求解 $\sum\limits_{i=1}^n\sum\limits_{j=1}^n cnt_{u,v}*dis_{u,v}$。</p>
+<p>接着考虑距离置零的问题，设置零的点对为 $(a,b)$，则边 $(u,v)$ 的距离则转化为 $\min(dis_{u,v},dis_{u,a}+dis_{b,v},dis_{u,b}+dis_{v,a})$，由于三角不等式的性质，后两个数之中只有一个可能比 $dis_{u,v}$ 小（否则 $2<em>dis_{u,v}&gt;dis_{u,a}+dis_{a,v}+dis_{u,b}+dis_{b,v}$，但有三角不等式可得 $dis_{u,v} \leq dis_{u,a}+dis_{a,v}$，对 $b$ 同理，故不合题意），因此可以将原式拆解为 $\sum\limits_{u=1}^n\sum\limits_{v=1}^n cnt_{u,v}</em>dis_{u,v}+cnt_{u,v}<em>\min(0,dis_{u,a}+dis_{b,v}-dis_{u,v})+cnt_{u,v}</em>\min(0,dis_{u,b}+dis_{a,v})=\sum\limits_{u=1}^n\sum\limits_{v=1}^n cnt_{u,v}<em>dis_{u,v}-cnt_{u,v}</em>\max(0,dis_{u,v}-dis_{u,a}-dis_{b,v})+cnt_{u,v}*\max(0,dis_{u,v}-dis_{u,b}-dis_{a,v})$，第一项可以直接提前求出，后两项是可以转化为同一种问题</p>
+<p>对于一对固定的 $u,v$，我们可以把所有的 $a,b$ 先按 $dis_{v,b}$ 排序，这样对于一个 $a$，$(u,v)$ 会产生贡献的 $b$ 就是一段连续的区间，然后再按 $dis_{u,a}$ 的大小顺序遍历 $a$，就可以用双指针 $+$ 差分用线性时间内统计出对于每对 $(a,b)$ 将他们之间的距离置零后的答案，最后取最小值输出即可，复杂度 $O(n^3)$</p>
+<p>备注：对于双指针的差分方法，可以对于每个 $a$ 记一个差分数组，这样在遍历 $a$ 时，每个 $a$ 对应的 $b$ 就在 $b$ 的排序数组不变的情况下是连续的，可以进行差分，这样要求对循环顺序的严谨处理，而且处理差分的复杂度是 $O(n^2)$，但由于本题大头在枚举 $(u,v,a,b)$ 所以可以接受</p>
+<h3 id="j-quest-ce-que-cest">J - Qu'est-ce Que C'est?</h3>
+<p>题意：求一个序列 $a$，满足 $a_i \in [-m,m]_\mathbb Z$ 且任意长度大于 $1$ 的子区间的和 $\geq 0$</p>
+<p>首先我们可以将所有子区间满足要求转化为从 $1 \sim n$ 每个点的所有后缀满足条件（类似后缀自动机子串和后缀的转化），在这个基础上进行 dp</p>
+<p>考虑定义 $dp_{i,j}$ 表示考虑前 $i$ 个数，当前位置的最小后缀和大小为 $j$ 的方案数，则只要当前位置填的数和最小后缀和的和是超过 $0$ 的就满足条件，可以进行转移，具体的实现上可能要分这这一位数的正负和最小后缀和的正负讨论，最后写完方程可以发现每次的转移相当于一个区间求和，加个前缀和数组维护即可，复杂度 $O(nm)$</p>
+<h3 id="k-square-game">K - Square Game</h3>
+<h3 id="l-we-are-the-lights">L - We are the Lights</h3>
+<p>题意：给出一段长为 $q$ 的操作序列，每次操作为打开/关闭一整行/一整列的灯，求最终的灯数</p>
+<p>由于后面的操作对前面的操作对前面的操作有覆盖效果，我们可以考虑时光倒流，这样只需要维护一下每一行/列的状态和剩余行/列的个数即可，每次打开行就在答案上加上剩余列的个数，打开列就加上剩余行的个数，直接模拟即可，复杂度 $O(q)$</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
