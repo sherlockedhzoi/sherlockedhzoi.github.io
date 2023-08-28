@@ -16,7 +16,7 @@
     
     
       
-        <title>2023“钉耙编程”中国大学生算法设计超级联赛（4） - sherlocked_hzoi's blog</title>
+        <title>2023“钉耙编程”中国大学生算法设计超级联赛（7） - sherlocked_hzoi's blog</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#20234" class="md-skip">
+        <a href="#20237" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2023“钉耙编程”中国大学生算法设计超级联赛（4）
+              2023“钉耙编程”中国大学生算法设计超级联赛（7）
             
           </span>
         </div>
@@ -264,85 +264,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1001-number-table" class="md-nav__link">
-    1001. Number Table
+  <a href="#a-xcellent-tree-query-problem" class="md-nav__link">
+    A. Xcellent Tree Query Problem
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1002-simple-tree-problem" class="md-nav__link">
-    1002. Simple Tree Problem
+  <a href="#b-random-nim-game" class="md-nav__link">
+    B. Random Nim Game
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1003-simple-set-problem" class="md-nav__link">
-    1003. Simple Set Problem
+  <a href="#c-rotation" class="md-nav__link">
+    C. Rotation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1004-data-generation" class="md-nav__link">
-    1004. Data Generation
+  <a href="#d-medians-strike-back" class="md-nav__link">
+    D. Medians Strike Back
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1005-teyvat" class="md-nav__link">
-    1005. Teyvat
+  <a href="#e-subsequence-not-substring" class="md-nav__link">
+    E. Subsequence Not Substring
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1006-pso" class="md-nav__link">
-    1006. PSO
+  <a href="#f-product-of-sorting-powers" class="md-nav__link">
+    F. Product of Sorting Powers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1007-guess" class="md-nav__link">
-    1007. Guess
+  <a href="#g-sum-of-binomial-coefficients" class="md-nav__link">
+    G. Sum of Binomial Coefficients
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1008-string-and-gcd" class="md-nav__link">
-    1008. String and GCD
+  <a href="#h-hex-a-gone-trails" class="md-nav__link">
+    H. HEX-A-GONE Trails
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1009-wo-mei-k" class="md-nav__link">
-    1009. WO MEI K
+  <a href="#i-colorings-counting" class="md-nav__link">
+    I. Colorings Counting
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1010-kong-ming-qi" class="md-nav__link">
-    1010. Kong Ming Qi
+  <a href="#j-widely-known-problem" class="md-nav__link">
+    J. Widely Known Problem
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1011-circuit" class="md-nav__link">
-    1011. Circuit
+  <a href="#k-three-operations" class="md-nav__link">
+    K. Three Operations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1012-a-b-problem" class="md-nav__link">
-    1012. a-b Problem
+  <a href="#l-landmine" class="md-nav__link">
+    L. Landmine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m-minimal-and-maximal-xor-sum" class="md-nav__link">
+    M. Minimal and Maximal XOR Sum
   </a>
   
 </li>
@@ -362,52 +369,39 @@
                   
 
 
-<h1 id="20234">2023“钉耙编程”中国大学生算法设计超级联赛（4）</h1>
-<h3 id="1001-number-table">1001. Number Table</h3>
-<h3 id="1002-simple-tree-problem">1002. Simple Tree Problem</h3>
-<h3 id="1003-simple-set-problem">1003. Simple Set Problem</h3>
-<p>题意：从 $k$ 个可重集中各选出 $1$ 个数，求选出来的 $k$ 个数形成的数列的最大值与最小值的差的最小值</p>
-<p>考虑枚举数列的最小值，那么只需要其它序列比这个值大就可以了，只要单调枚举最小值的话其他位置的值的个数也是线性的，最终枚举的个数就是 $k$ 个集合大小的总和，复杂度 $O\left(\sum\limits_t\sum\limits_{i=1}^k c_i\right)$，可以通过</p>
-<h3 id="1004-data-generation">1004. Data Generation</h3>
-<h3 id="1005-teyvat">1005. Teyvat</h3>
-<h3 id="1006-pso">1006. PSO</h3>
-<p>题意：给出 $n$ 个点，求 $n$ 个点随机连成一个菊花图，任意两点之间距离的期望值</p>
-<p>签到题，答案就是 $\frac 2n<em>1+\frac{n-2}n</em>2=\frac{2n-4}n$，直接输出即可</p>
-<h3 id="1007-guess">1007. Guess</h3>
-<p>题意：求 $e^{\sum\limits_{d \vert n} \mu(\frac nd)\ln d} {\rm\ mod\ } 998244353$</p>
-<p>数学题，推公式即可，具体如下：
-$$\begin{align<em>}
-&amp;e^{\sum\limits_{d \vert n} \mu(\frac nd)\ln d}\
-=&amp;\prod\limits_{d \vert n} e^{\mu(\frac nd)\ln d}\
-=&amp;\prod\limits_{d \vert n} d^{\mu(\frac nd)}\
-=&amp;\begin{cases}1 &amp;,n=1\p &amp;,n=p^k\1 &amp;,n=\prod\limits_{i=1}^k p_i^{c_i}\end{cases}
-\end{align</em>}$$</p>
-<p>质因数分解之后求解即可，由于 $n$ 是 $1e18$ 级别的，所以要用到 Pollard-Rho，复杂度 $O(n^\frac 14)$，可以通过</p>
-<h3 id="1008-string-and-gcd">1008. String and GCD</h3>
-<p>题意：给定字符串 $S$，求 $\prod\limits_{i=1}^n\left(1+\sum\limits_{j=1}^{i-1} [S[1:j]=S[i-j+1:i]]gcd(i,j)\right) {\rm\ mod\ } 988244353$</p>
-<p>首先看到 $S[1:j]=S[i-j+1:i]$ 可以很快想到 KMP，将 KMP 的 fail 树建出来就可以发现原问题转化为了求 $\prod\limits_{i=1}^n\left(1+\sum\limits_{j \in fa(i)} gcd(i,j)\right)$，其中 $fa(i)$ 表示 $i$ 的所有祖先节点构成的集合</p>
-<p>对于 gcd，我们可以将其反演为 $\sum\limits_{d \vert i,d \vert j}\varphi(d)$，这样就可以把原问题变成 $i$ 的每个约数在祖先的约数构成的可重集中出现的次数，这个问题可以用一个 $O(n)$ 的桶解决。由于所有的约数是 $1 \sim n$ 的约数，所以约数总个数是 $O(n\ln n)$ 级别的，因此求解的总时间复杂度就是 $O(n\ln n)，可以通过</p>
-<h3 id="1009-wo-mei-k">1009. WO MEI K</h3>
-<h3 id="1010-kong-ming-qi">1010. Kong Ming Qi</h3>
-<p>题意：求一种孔明棋平局的棋盘</p>
-<p>构造题，解法有很多，这里给出我的一种解法：</p>
-<p>xoxoxo...
-xoxoxo...
-oxoxox...
-oxoxox...
-xoxoxo...
-xoxoxo...
-.........
-.........
-.........</p>
-<p>类似左上角那样向右、向下延伸即可</p>
-<h3 id="1011-circuit">1011. Circuit</h3>
-<p>题意：给出一个带权有向图，求图中的最小环大小与个数</p>
-<p>求最小环立马想到 Floyd，但直接跑 Floyd 的话没法对最小环的个数去重，因此需要对  Floyd 进行魔改。</p>
-<p>考虑 Floyd 的 dp 定义：在最外层循环到 $k$ 时，$dp_{i,j}$ 表示 $i,j$ 除自身外只经过 $[1,k]$ 的节点的最短路。对于每个最小环，只在编号最大的节点统计其贡献。通过 dp 的定义容易发现当外层循环到 $k$ 时，$dp_{i,i}$ 表示的正是经过节点最大编号为 $k$ 最小环，所以只需要在循环到 $k$ 时统计 $dp_{k,k}$ 的贡献即可，最终复杂度 $O(n^3)$，可以通过</p>
-<h3 id="1012-a-b-problem">1012. a-b Problem</h3>
-<p>题意：一个 $1 \sim n$ 的数列，Alice 选数 $i$ 的收益是 $A_i$，Bob 选数 $i$ 的收益是 $B_i$，Alice 和 Bob 轮流取数，双方都想让自己的分数 $-$ 对方的分数最大化，求两人在采取最优策略的情况下两人的分差</p>
-<p>首先考虑对于 Alice 而言选 $i$ 比选 $j$ 更优意味着什么，然后就可以得到一个不等式：$A_i-B_j&gt;A_j-B_i$ ，移项后可以得到 $A_i+B_i&gt;A_j+B_j$，对于 Bob 可以得到相同的不等式，所以两人的选择本质上就是把数列按 $A_i+B_i$ 从大到小排序之后依次取第一个数得到的结果，排序后直接做即可，复杂度 $O(n\log n)$，可以通过</p>
+<h1 id="20237">2023“钉耙编程”中国大学生算法设计超级联赛（7）</h1>
+<h3 id="a-xcellent-tree-query-problem">A. Xcellent Tree Query Problem</h3>
+<h3 id="b-random-nim-game">B. Random Nim Game</h3>
+<p>题意：Nim 游戏的随机版本，每个人可以自由选择石堆，但是选择的石子是从可能的结果中均匀随机的，求先手获胜的概率</p>
+<p>首先考虑一堆的情况，很容易发现只有当 $n=1$ 时必胜，否则概率为 $\frac 12$
+然后考虑多堆，假设所有的都是 $1$，则按奇偶性讨论即可；否则不论选哪个不为 $1$ 的堆，都有 $\frac 12$ 概率最终剩下 $1$，$\frac 12$ 最终剩下 $0$，所以最终有 $\frac 12$ 概率有奇数堆 $1$，$\frac 12$ 有偶数堆 $1$，故先手获胜概率为 $\frac 12$，输出即可，复杂度 $O(1)$</p>
+<h3 id="c-rotation">C. Rotation</h3>
+<h3 id="d-medians-strike-back">D. Medians Strike Back</h3>
+<p>题意：求构造一个长度为 $n$ 且值域为 $3$ 的数列，使得该数列的任意子区间的中位数出现次数的最大值最小，并输出中位数出现次数的最小值</p>
+<p>考虑将问题转化为构造子区间中中位数出现次数最大值为 $n$ 的最长数列长度</p>
+<p>首先有一个比较容易发现的事实，假如只考虑中位数为 $2$ 的子区间，那么很容易构造出如下数列满足中位数出现次数最多为 $2$：$1313...1313221313..1313$</p>
+<p>中位数出现次数为 $n$ 时，我们可以首先构造出来一个类似上面模式的数列，两边的 $1$ 和 $3$ 都各有 $n$ 个，这样就保证了只含有 $1,3$ 的区间有 $n$ 个中位数，含有 $2$ 的区间有 $2$ 个中位数。由于这样的区间满足包含 $2$ 的区间 $2$ 一定是中位数，所以我们只需要类似这样构造出如下数列：$1313...131322131313...13132221313...1313 ...$，这样就能满足含有 $2$ 的区间中位数最多有 $n$ 个的条件了，根据规律很容易计算出这样的数列长度是 $(\lfloor\frac n2\rfloor+1) \times 2n+n$，然后就可以随便搞了，解二次函数也可，直接二分也可，复杂度 $O(T\log n)$，可以通过</p>
+<h3 id="e-subsequence-not-substring">E. Subsequence Not Substring</h3>
+<p>题意：求 $S$ 字典序最小的不是子串的子序列</p>
+<p>考虑把子串自动机和子序列自动机搞出来，不考虑复杂度的话每次从 $|\Sigma|^0$ 贪心即可，但这样需要遍历所有的子串，复杂度会达到 $O(n^2)$，然后我们注意到如果一个节点后面能得出的子串和子序列个数是相同的，我们本质上就不会继续往下走了，所以我们可以反向拓扑 dp 先跑出来从每个点出发的路径数，每次判断一下能走出的路径数相不相等即可，虽然子序列自动机可能会出现溢出，但由于是判断相等，可以理解成无模哈希，所以没有区别，最终复杂度 $O(n|\Sigma|)$，可以通过</p>
+<h3 id="f-product-of-sorting-powers">F. Product of Sorting Powers</h3>
+<h3 id="g-sum-of-binomial-coefficients">G. Sum of Binomial Coefficients</h3>
+<h3 id="h-hex-a-gone-trails">H. HEX-A-GONE Trails</h3>
+<p>题意：两个人在树上博弈，每个人每次可以在树上走一步，但不能前往自己或对方走过的点，两人轮流前进，先走不了的输，求先手是否存在必胜策略</p>
+<p>首先考虑将两人起始点所在的路径拎出来，可以发现每次每个人的移动可以分为两类：在路径上走/下到子树里，容易发现如果选择下到子树里，那么其可以移动的最大步数和对方可以移动的最大步数都可以很简单的求出来，这样就可以直接得到下到子树是否必胜，而由于只有两种选择，如果不是必胜的话，那么不论结果是否存在必胜策略，为了达到更优的解都必须继续在路径上走，知道两人相撞或任意一方下到子树里必胜，所以直接模拟即可，复杂度是每次求一个区间最小值，不带修，复杂度 $O(n\log n)$，可以通过</p>
+<h3 id="i-colorings-counting">I. Colorings Counting</h3>
+<h3 id="j-widely-known-problem">J. Widely Known Problem</h3>
+<h3 id="k-three-operations">K. Three Operations</h3>
+<p>题意：给定三种操作：$x=x-1,x=\lfloor\frac{x+a}2\rfloor,x=\sqrt{x+b}$，求让 $x$ 变成 $0$ 的最小操作次数</p>
+<p>考虑贪心，每次找三种操作能使当前数到达的最小值，如果是 $x-1$ 的话说明要减到底，直接做就可以，复杂度 $O(T\log n)$，可以通过</p>
+<p>正确性证明：
+1. 对于 $x$，一定是往下比较优，且是到可能的最小值最优，因为 $x$ 能到达的最小值一定 $\leq$ 任意比 $x$ 大的数能到达的最小值，往上步数只会平白无故增加而已
+2. 是 $x-1$ 的话一定是减到底，因为 $\lfloor\frac{x+a}2\rfloor,\sqrt{x+b}$ 都是单调递增的函数</p>
+<h3 id="l-landmine">L. Landmine</h3>
+<h3 id="m-minimal-and-maximal-xor-sum">M. Minimal and Maximal XOR Sum</h3>
+<p>题意：给定一个排列，你可以反转任意个子区间使其称为 $1 \sim n$，求所有反转区间长度异或和的最小值和最大值</p>
+<p>首先有一个很容易发现的事实：对于长度为 $2^k(k \geq 2)$ 的区间，我们可以通过反转若干个长度为 $2$ 的区间之后反转整个区间，使得在不改变原序列顺序的情况下在最终结果上加上/减去一个二进制位的贡献，那么剩下需要考虑的就只有 $1/2$ 对应二进制位的可能结果</p>
+<p>$1$ 很明显可以反转一个长度为 $1$ 的区间增加/删除，而 $2$ 由于一定造成的逆序对数的变化所以无论怎么翻转这一位的结果都确定 $=$ 序列的逆序对数 $\&amp;1$，所以只要求一下逆序对数即可，复杂度 $O(n\log n)$，可以通过</p>
 
 
 

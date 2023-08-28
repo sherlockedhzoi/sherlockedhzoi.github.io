@@ -1,0 +1,496 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
+    
+    
+      
+        <title>2023牛客暑期多校训练营8 - sherlocked_hzoi's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#20238" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="sherlocked_hzoi&#39;s blog" class="md-header__button md-logo" aria-label="sherlocked_hzoi's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sherlocked_hzoi's blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2023牛客暑期多校训练营8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="sherlocked_hzoi&#39;s blog" class="md-nav__button md-logo" aria-label="sherlocked_hzoi's blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    sherlocked_hzoi's blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-alive-fossils" class="md-nav__link">
+    A. Alive Fossils
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-bloodline-counter" class="md-nav__link">
+    B. Bloodline Counter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-clamped-sequence-ii" class="md-nav__link">
+    C. Clamped Sequence II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-distance-on-tree" class="md-nav__link">
+    D. Distance on Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-educational-problem-i" class="md-nav__link">
+    E. Educational Problem I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-educational-problem-ii" class="md-nav__link">
+    F. Educational Problem II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g-expected-distance" class="md-nav__link">
+    G. Expected Distance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-insert-1-insert-2-insert-3" class="md-nav__link">
+    H. Insert 1, Insert 2, Insert 3, ...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-make-it-square" class="md-nav__link">
+    I. Make It Square
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j-permutation-and-primes" class="md-nav__link">
+    J. Permutation and Primes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-scheming-furry" class="md-nav__link">
+    K. Scheming Furry
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="20238">2023牛客暑期多校训练营8</h1>
+<h3 id="a-alive-fossils">A. Alive Fossils</h3>
+<p>题意：给出 $n$ 个字符串集合，求有多少个字符串在里面出现过</p>
+<p>签到题，直接 unordered_map 当桶存字符串即可，复杂度 $O(\sum c)$</p>
+<h3 id="b-bloodline-counter">B. Bloodline Counter</h3>
+<h3 id="c-clamped-sequence-ii">C. Clamped Sequence II</h3>
+<p>题意：给出 $n$ 个数 $a_i$，$m$ 次操作，每次操作将 $a_x$ 变成 $d$ 或询问对全序列进行 d-放缩 之后 $\sum\limits_{i=1}^n\sum\limits_{j=i+1}^n |a_j-a_i|$ 的最大值，其中 d-放缩 指任意选择 $l,r$，将 $a_i$ 改为 $\max(\min(a_i,r),l)$</p>
+<p>首先对于 $\sum\limits_{i=1}^n\sum\limits_{j=i+1}^n |a_j-a_i|$ 在 d-放缩之后的最大值我们可以通过权值线段树简单维护，然后考虑如何找到一个最佳的 $[l,r]$ 使得 d-放缩后的值最大</p>
+<p>本质上，我们要求的就是一个类似 $\sum\limits_{x=l}^r\sum\limits_{y=x}^r(y-x)$ 的式子，很容易发现这是一个单峰函数，但由于值域是不连续的，所以该函数很明显是一个非严格的单峰函数，无法直接三分，所以我们考虑在离散化之后的值域上三分，这样就能保证严格单峰了。但由于值域是离散化的，对于每一个 $l$ 比一定能找到对应的 $l+d$，所以我们需要三分两遍，一遍三分左端点，另一遍三分右端点，这样就能得到结果了，复杂度 $O(q\log n\log V)$</p>
+<h3 id="d-distance-on-tree">D. Distance on Tree</h3>
+<p>题意：给出一棵根为 $1$ 的树，求满足 $a_u+a_v+a_w \equiv k\ ({\rm mod\ }m)$，$u,v,w \in T_x$ 的 $dis(u,v)+dis(v,w)+dis(w,u)$ 最大值（$T_x$ 表示 $x$ 的子树）</p>
+<p>复杂度结论题。首先，本题有一个很裸的三重树上背包做法：$dp_{u,i,j}$ 表示 $u$ 为根节点的子树选了 $i$ 个点，和 ${\rm mod\ } m$ 为 $j$ 的方案数，然后就可以 $O(m^2)$ 转移。这种方法看起来复杂度是 $O(nm^2)$ 的，但实际上，如果只记录有效的状态，这种做法的复杂度可以证明是 $O(n\sqrt m\min(n,m))$ 的，证明如下：</p>
+<p>列出详细的复杂度式子，可以得到
+$$\begin{align<em>}
+    &amp;\sum\limits_{u=1}^n \sum\limits_{v \in son_u} \min(siz_v^2,m)+presiz_v</em>\min(siz_v^2,m)+\min(presiz_v^2,m)<em>siz_v+siz_v+presiz_v</em>siz_v+siz_v\
+    =&amp;O(\sum\limits_{u=1}^n\sum\limits_{v \in son_u} \min(presiz_v,m)<em>\min(siz_v^2,m)+\min(presiz_v^2,m)</em>\min(siz_v,m))\
+    =&amp;O(\sum\limits_{v=1}^n \min(presiz_v,m)<em>\min(siz_v^2,m)+\min(presiz_v^2,m)</em>\min(siz_v,m))
+\end{align*}$$
+，其中 $presiz_v$ 表示 $v$ 之前遍历到的 $fa_v$ 的儿子的 $siz$ 的和，第二个等号可以成立的原因是每个点只被遍历到了一遍</p>
+<p>首先证明一个 Lemma：$\sum\limits_v presiz_v \leq \min({n^2 \over \min\limits_v{siz_v}},n\max\limits_v{presiz_v}),\sum\limits_v siz_v \leq \min({n^2 \over \min\limits_v{presiz_v}},n\max\limits_v{siz_v})$</p>
+<p>证明：首先考虑第一个不等式，后一项显然，前一项对每个点考虑暴力往上跳，每次和一个 $siz_v$ 的子树 $v$ 转移之后其所在的 $presiz$ 大小就会增加 $siz_v$，而子树大小最大为 $n$，故每个点最多作为 $presiz$ 对应子树中的节点出现 $\frac n{\min\limits_v{siz_v}}$ 次，故 $\sum\limits_v presiz_v \leq {n^2 \over \min\limits_v siz_v}$，另一个不等式同理</p>
+<p>回到原式，我们按子树 $siz$ 分类讨论：</p>
+<ol>
+<li>
+<p>当 $siz_v \leq \sqrt m,presiz_v \leq \sqrt m$ 时，原式 $=\sum\limits_v presiz_v<em>siz_v^2+presiz_v^2</em>siz_v \leq nm\sqrt m$</p>
+</li>
+<li>
+<p>当 $siz_v \leq \sqrt m,presiz_v&gt;\sqrt m$ 时，
+$$\begin{align<em>}
+原式=&amp;\sum\limits_v \min(presiz_v,m)</em>siz_v^2+m<em>siz_v\
+    =&amp;\min(\sum\limits_v presiz_v</em>siz_v^2,m\sum\limits_v siz_v^2)+m\sum\limits_v siz_v
+\end{align*}$$
+对三项分别求最大值即可</p>
+<ul>
+<li>第一项：$\sum\limits_v presiz_v<em>siz_v^2 \leq \sqrt m\sum\limits_v presiz_v</em>siz_v=n^2\sqrt m$（最后一个等号是点对数统计的结论）</li>
+<li>第二项：$m\sum\limits_v siz_v^2$，由 $x^2+y^2$ 在 $x+y$ 确定时 $|x-y|$ 越大 $x^2+y^2$ 越大可得当有 $\frac n{\sqrt m}$ 个 $siz_v=\sqrt m$ 时该项取得最大值 $nm\sqrt m$</li>
+<li>第三项：$m\sum\limits_v siz_v$，由 Lemma 得 $\sum\limits_v siz_v \leq \min({n^2 \over \sqrt m},n\sqrt m)$，故该项 $\leq \min(n^2\sqrt m,nm\sqrt m)=n\sqrt m\min(n,m)$</li>
+</ul>
+<p>三项合起来，总复杂度为 $O(n\sqrt m\min(n,m))$</p>
+</li>
+<li>
+<p>当 $siz_v&gt;\sqrt m,presiz_v \leq \sqrt m$ 时，证明与前一种情况相同，复杂度为 $O(n\sqrt m\min(n,m))$</p>
+</li>
+<li>
+<p>当 $siz_v&gt;\sqrt m,presiz_v&gt;\sqrt m$ 时，
+$$\begin{align<em>}
+原式=&amp;\sum\limits_v \min(presiz_v,m)</em>m+\min(siz_v,m)<em>m\
+    =&amp;\min(m\sum\limits_v presiz_v,m^2\sum\limits_v [presiz_v&gt;\sqrt m\ \land\ siz_v&gt;\sqrt m])\
+    &amp;+\min(m\sum\limits_v siz_v,m^2\sum\limits_v [siz_v&gt;\sqrt m\ \land\ presiz_v&gt;\sqrt m])\
+\end{align</em>}$$
+还是和前两种情况一样分别求最大值即可：</p>
+<ul>
+<li>$m\sum\limits_v presiz_v$：由 Lemma 可得 $m\sum\limits_v presiz_v \leq m\min({n^2 \over \sqrt m},n\sqrt m)=\min(n^2\sqrt m,nm\sqrt m)=n\sqrt m\min(n,m)$</li>
+<li>$m\sum\limits_v siz_v$：证明和前一项相同，最大值为 $n\sqrt m\min(n,m)$</li>
+<li>$m^2\sum\limits_v[siz_v&gt;\sqrt m\ \land\ presiz_v&gt;\sqrt m]$：本质上就是求满足 $presiz_v&gt;\sqrt m,siz_v&gt;\sqrt m$ 的点的个数，从 $presiz_v$ 最小的点开始计数的话，每多一个点这些点组成的点集 $siz$ 总和就会增加至少 $\sqrt m$，故满足条件的点数是 $O(\frac n{\sqrt m})$ 的，原式的最大值即 $\leq m^2\frac n{\sqrt m}=nm\sqrt m$</li>
+</ul>
+<p>三项合起来，总复杂度为 $O(n\sqrt m\min(n,m))$</p>
+</li>
+</ol>
+<p>故只转移有用的状态，复杂度就是 $O(n\sqrt m\min(n,m))$</p>
+<p>所以我们直接用有用的状态跑树上背包即可，时间卡的比较紧建议用记录有效点的方法而非 unordered_map，否则可能会被卡常</p>
+<h3 id="e-educational-problem-i">E. Educational Problem I</h3>
+<h3 id="f-educational-problem-ii">F. Educational Problem II</h3>
+<h3 id="g-expected-distance">G. Expected Distance</h3>
+<h3 id="h-insert-1-insert-2-insert-3">H. Insert 1, Insert 2, Insert 3, ...</h3>
+<p>题意：给出一个序列 $A$，求其能够划分为若干个类似 $1,2,...,k$ 的子序列的子区间</p>
+<p>这道题的主流方法有两种：固定左端点找合法的右端点/固定右端点找合法的左端点，但都有一个共通的显然性质：每个点一定是尽量匹配靠自己更近的前驱/后继更优，然后在这个的基础上才能做这道题</p>
+<ol>
+<li>
+<p>固定左端点找右端点：首先显然对于一个左端点 $l$，满足条件的右端点 $r$ 是 一个类似 $[l,p]$ 的区间（满足单调性），而后面匹配上的链里面不以 $1$ 开头的链的起点的最小值就是 $p+1$。考虑每次移动 $l$ 会发生的变化只有一条链的起点因为加上 $l$ 而前移，同时可能因为 $A_l=1$ 从不合法变合法，并且每条链后面这种情况最多只可能发生一次，所以我们可以维护一个单调栈，里面保证栈顶是当前 $l$ 对应的 $p$，每次移动 $l$ 之后先把 $l$ push 进去，每次判断当前栈顶对应的链是否合法，合法就弹出，由于每条链只会从不合法变为合法一次，所以复杂度是 $O(n)$ 的</p>
+</li>
+<li>
+<p>固定右端点找左端点：首先要证明几个 Lemma：</p>
+<ul>
+<li>Lemma 1：若已知 $[l_1,r_1],[l_2,r_2]$ 是满足条件的区间，则 $[l_1,r_1] \cap [l_2,r_2]$ 也是满足条件的区间（对于一个固定的 $l$，满足条件的 $r$ 是一段连续区间）</li>
+<li>Lemma 2：已知 $[l,p],[l,r]$ 是满足条件的区间，则 $[p+1,r]$ 是满足条件的区间（$[l,r]$ 只可能是 $[l,p]$ 和 $[p+1,r]$ 拼出来的）</li>
+</ul>
+<p>还是考虑按上述方法匹配，考虑当前 $r$ 对应的最大的满足条件的 $l$，则 $l$ 至少是当前链的起点所在的位置 $p$。但 $p$ 可能不合法，因为 $[p,r]$ 内的点所在的链起点可能比 $p$ 小，所以我们可以对每个点 $r$ 存一下它满足条件的最大的 $l$，记为 $maxl_r$，则 $maxl_r=\max\limits_{i=p}^{r-1} ([maxl_i \leq p]*maxl_i)$（证明来自 Lemma 1），所以我们可以动态维护一个 $maxl$ 的区间最值，就可以在 $O(\log n)$ 的复杂度内求出 $maxl_r$，而 $maxl_r$ 前面满足条件的 $l$ 根据 Lemma 2 可以得知其均满足 $[l,maxl_r-1]$ 是合法区间，所以 $r$ 开始的合法区间数 $ans_r=ans_{maxl_r-1}+1$，扫一遍求解即可，复杂度 $O(n\log n)$</p>
+<h3 id="i-make-it-square">I. Make It Square</h3>
+<p>题意：给出 $s,t$，要求 $p+s+q+t$ 是重串，$len(p)=len(q)$，求 $len(p)=1,2,...,m$ 时 $p+s+q+t$ 的个数</p>
+</li>
+</ol>
+<p>这道题看起来比较难，但把要匹配的两个串画出来很容易发现是 $p+s+q_1=q_2+t$ 或 $p+s_1=s_2+q+t$ 的形式，且每种情况都存在两个边界：一个是 $p=q=\Sigma^0$，另一个是 $p+s+q=t$ 或 $p+s_1=s_2+q+t$ 且 $p=s_2,s_1=q+t$。在这两个临界之间的情况本质上答案只有 $0/1$ 两种可能性，而 $1$ 只有当 $s$ 和 $t$ 在对应位置相等即可，画出来就可以发现求的时一对前后缀是否相等和两个不变的串是否相等，直接 KMP + 暴力判即可；而在两个临界外的情况，每次都是在两个位置插入一个随意的相同字符，结果就是类似 $26^k$ 的形式，直接累乘即可，最终总复杂度 $O(n)$，可以通过</p>
+<h3 id="j-permutation-and-primes">J. Permutation and Primes</h3>
+<p>题意：求满足 $\forall i \in [1,n), P_i+P_{i+1}$ 或 $|P_i-P_{i+1}|$ 为奇素数的排列</p>
+<p>构造题，主流构造方法有两种：
+1. 选定奇素数 $p$，将序列划分为 $p$ 段，每一段可以用类似 $p-k,2p-k,...,mp-k$ 或其反转的形式表示，这样各段内部就自然满足条件，只要分类讨论怎么连接各段即可。根据分类讨论的结果，最小的能找出结果的奇素数为 $5$，最后只需要分 $5$ 种情况分类讨论即可，复杂度 $O(n)$
+2. 每相邻 8 个数成一段，每一段都按 $1,6,3,8,5,2,7,4$ 这样类似排列，最后直接连接起来就能得到答案（注意最后不足 $8$ 个的要暴力求解），复杂度 $O(n+8!)$（当然，你也可以把所有合法的构造先找出来然后直接写，复杂度 $O(n)$）</p>
+<h3 id="k-scheming-furry">K. Scheming Furry</h3>
+<p>题意：两个人在矩阵上博弈，一个人可以交换两不同行，另一个人可以交换两不同列，谁先让矩阵排好序谁获胜，永远排不好则会平局，就最优决策下的结果（矩阵有序定义为将矩阵拍成一维向量后有序）</p>
+<p>看起来是博弈论，但自习观察容易发现，当 $n&gt;2$ 或 $m&gt;2$ 时，双方都有办法阻止对方获胜，所以双方都必不败，即必定平局</p>
+<p>当 $n=2$ 或 $m=2$ 时，先手或后手将只有唯一的一种交换方法，所以只要判断另外一边交换完成之后另一侧是否有序即可，将排列建成环图很容易发现交换的步数为 $n-$ 环的个数，所以直接用并查集或者暴力跳就可以了，复杂度 $O(n+m)$，最终双方不能阻挠的一方要么平局，要么必败，注意讨论 $n=m=2$ 和无解（两人合作也没法 sort 成功）的情况即可，最终复杂度 $O(n+m+nm)$</p>
+<p>~~以为这样就完了，但其实还未结束~~</p>
+<p>这个题还有一点在于如果先手一步就获胜了，还要注意这时后手无法阻挠先手，所以先手一定是毕生的，需要特判，加上这个边界即可</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      
+    
+  </body>
+</html>
